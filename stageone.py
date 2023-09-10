@@ -1,39 +1,26 @@
-from typing import Union
-
 from fastapi import FastAPI
-
-import requests
 
 import json
 
 import datetime
 import time
 
+current_date = datetime.datetime.now()
+current_date_utc = datetime.datetime.now(datetime.timezone.utc)
+utc_time = current_date.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+day = current_date.strftime("%A")
+
 app = FastAPI()
 
-BASE_URL = 'http://chunnodu.pythonanywhere.com'
+@app.get("/api")
 
-@app.get("/")
+def endpoint(slackname, track):
+    statuscode = 200
+    data = {
+        "slack_name":slackname, "track":track, "current_day":day, "current_time":utc_time,
+        "github_file_url":'https://github.com/chunnodu/hng10/blob/main/stageone.py', 
+        "github_repo_url":'https://github.com/chunnodu/hng10', "status_code": statuscode
+        }
+    return data
 
-dict = {
-    "Slackname" : "chunnodu", 
-    "track" : "backend"
-    "Current_day": current_day
-    "current_time": current_time
-    "github_file_url": 
-    "github_repo_url":
-    "status_code"
-    
-    
-    }
-
-datetime.date
-current_time = time.time
-print(current_time)
-
-'''
-def read_data(slack_name, track):
-    
-    return (slack_name, track)
-
-'''
