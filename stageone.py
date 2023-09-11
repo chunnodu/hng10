@@ -15,10 +15,10 @@ app = FastAPI()
 
 @app.get("/api")
 
-def endpoint(slackname, track):
+def endpoint(slack_name, track):
     statuscode = 200
     data = {
-        "slack_name":slackname, "track":track, "current_day":day, "current_time":utc_time,
+        "slack_name":slack_name, "track":track, "current_day":day, "current_time":utc_time,
         "github_file_url":'https://github.com/chunnodu/hng10/blob/main/stageone.py', 
         "github_repo_url":'https://github.com/chunnodu/hng10', "status_code": statuscode
         }
