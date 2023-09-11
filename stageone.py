@@ -7,7 +7,7 @@ import time
 
 current_date = datetime.datetime.now()
 current_date_utc = datetime.datetime.now(datetime.timezone.utc)
-utc_time = current_date.strftime("%Y-%m-%dT%H:%M:%SZ")
+utc_time = current_date_utc.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 day = current_date.strftime("%A")
 
