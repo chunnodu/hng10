@@ -1,10 +1,10 @@
 from fastapi import FastAPI
+from datetime import datetime, timezone
 
-import datetime
 import time
 
-current_date = datetime.datetime.now()
-current_date_utc = datetime.datetime.now(datetime.timezone.utc)
+current_date = datetime.now()
+current_date_utc = datetime.now(timezone.utc)
 utc_time =  f'{current_date_utc.strftime("%Y-%m-%dT%H:%M:%SZ")}'
 day = current_date.strftime("%A")
 
